@@ -20,7 +20,7 @@ const teamMembers = [
     id: 2,
     name: 'Devayan Das',
     role: 'Founder & CTO',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400',
+    image: 'https://media.licdn.com/dms/image/v2/D5603AQEwRfajmzdgqw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1684441940878?e=1746662400&v=beta&t=IsrJ62FVBBeLcrtMZb89HltzpyGmEUOpLcwp5YPT07E',
     bio: 'Devayan specializes in AI-driven automation and predictive analytics, bringing expertise in machine learning and software development to create intelligent business solutions.',
     linkedin: 'https://linkedin.com/in/devayan-das',
     github: 'https://github.com/devayan-das',
