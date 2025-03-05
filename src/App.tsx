@@ -204,7 +204,7 @@ function App() {
             <div>
               <h3 className="text-[#f8e4d3] font-bold mb-4">Contact</h3>
               <div className="space-y-2">
-                <p className="text-[#f8e4d3]/80">stenixai@gmail.com</p>
+                <p className="text-[#f8e4d3]/80">stenix.ai.solutions@gmail.com</p>
                 <div className="flex gap-4">
                   <a href="https://linkedin.com/in/shreyansh-mathur" className="text-[#f8e4d3]/80 hover:text-[#5ca869]">Shreyansh</a>
                   <a href="https://linkedin.com/in/devayan-das" className="text-[#f8e4d3]/80 hover:text-[#5ca869]">Devayan</a>
