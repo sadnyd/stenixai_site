@@ -33,7 +33,7 @@ const teamMembers = [
     name: 'Sarthak Tanwar',
     role: 'Founder & CTO',
     image: '/pics/sarthak.jpeg',
-    bio: 'Sarthak has built scalable AI-driven applications and backend systems, leveraging his experience in AI solutions and full-stack development at Quantiphi.',
+    bio: 'Sarthak has built scalable AI-driven applications and backend systems, leveraging his experience in AI solutions and full-stack development.',
     linkedin: 'https://github.com/sarthak-tanwar',
     github: 'https://github.com/sarthak-tanwar',
     twitter: 'https://twitter.com/sarthak_t',
