@@ -32,7 +32,7 @@ const teamMembers = [
     id: 3,
     name: 'Sarthak Tanwar',
     role: 'Founder & CTO',
-    image: 'public/sarthak.jpg',
+    image: '/sarthak.jpg',
     bio: 'Sarthak has built scalable AI-driven applications and backend systems, leveraging his experience in AI solutions and full-stack development.',
     linkedin: 'https://github.com/sarthak-tanwar',
     github: 'https://github.com/sarthak-tanwar',
