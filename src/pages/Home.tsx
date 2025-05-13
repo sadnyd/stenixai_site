@@ -1,36 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { 
-  ChevronRight, 
-  Bot, 
-  Brain, 
-  BarChart, 
-  MessageSquareCode, 
-  Zap,
-  Database,
-  Cloud,
-  Code,
-  Workflow,
-  Shield,
-  Users
-} from 'lucide-react';
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import ConsultationModal from "../components/ConsultationModal"
+import { ChevronRight, Bot, Brain, BarChart, MessageSquareCode, Cloud, Shield } from "lucide-react"
 
 function Home() {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
-  });
+    triggerOnce: true,
+  })
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+        staggerChildren: 0.2,
+      },
+    },
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -38,43 +30,44 @@ function Home() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
-      }
-    }
-  };
+        duration: 0.5,
+      },
+    },
+  }
 
   const services = [
     {
       icon: Brain,
-      title: 'AI Strategy & Consulting',
-      description: 'Expert guidance on integrating AI into your business operations for maximum impact and ROI.'
+      title: "AI Strategy & Consulting",
+      description: "Expert guidance on integrating AI into your business operations for maximum impact and ROI.",
     },
     {
       icon: Bot,
-      title: 'Process Automation',
-      description: 'Streamline workflows with intelligent automation solutions that reduce manual effort and boost productivity.'
+      title: "Process Automation",
+      description:
+        "Streamline workflows with intelligent automation solutions that reduce manual effort and boost productivity.",
     },
     {
       icon: BarChart,
-      title: 'Data Analytics',
-      description: 'Transform raw data into actionable insights with advanced analytics and predictive modeling.'
+      title: "Data Analytics",
+      description: "Transform raw data into actionable insights with advanced analytics and predictive modeling.",
     },
     {
       icon: MessageSquareCode,
-      title: 'Custom Solutions',
-      description: 'Tailored AI solutions designed specifically for your unique business challenges and goals.'
+      title: "Custom Solutions",
+      description: "Tailored AI solutions designed specifically for your unique business challenges and goals.",
     },
     {
       icon: Cloud,
-      title: 'Cloud AI Integration',
-      description: 'Seamlessly integrate AI capabilities with your cloud infrastructure for scalable solutions.'
+      title: "Cloud AI Integration",
+      description: "Seamlessly integrate AI capabilities with your cloud infrastructure for scalable solutions.",
     },
     {
       icon: Shield,
-      title: 'AI Security & Compliance',
-      description: 'Ensure your AI implementations are secure, compliant, and follow best practices.'
-    }
-  ];
+      title: "AI Security & Compliance",
+      description: "Ensure your AI implementations are secure, compliant, and follow best practices.",
+    },
+  ]
 
   return (
     <div className="text-[#f8e4d3]">
@@ -101,24 +94,23 @@ function Home() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-6xl md:text-7xl font-bold mb-8">
-              Transform Your Business with{' '}
-              <span className="text-[#5ca869]">Intelligent AI</span>
+              Transform Your Business with <span className="text-[#5ca869]">Intelligent AI</span>
             </h1>
             <p className="text-2xl text-[#f8e4d3]/80 mb-12 max-w-3xl mx-auto">
-              Unleash the power of AI to streamline operations, boost efficiency, and drive 
-              unprecedented growth in your business.
+              Unleash the power of AI to streamline operations, boost efficiency, and drive unprecedented growth in your
+              business.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.a 
-                href="#contact"
+              <motion.a
+                onClick={() => setIsModalOpen(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#5ca869] hover:bg-[#90bc8c] text-[#0a222e] font-bold py-4 px-8 rounded-lg text-lg transition-colors flex items-center justify-center gap-2"
+                className="bg-[#5ca869] hover:bg-[#90bc8c] text-[#0a222e] font-bold py-4 px-8 rounded-lg text-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 Start Your AI Journey
                 <ChevronRight size={20} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 href="#solutions"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -157,11 +149,11 @@ function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Transformative AI Solutions</h2>
             <p className="text-xl text-[#f8e4d3]/80 max-w-3xl mx-auto">
-              Leverage our comprehensive suite of AI-powered services to revolutionize 
-              your business operations and stay ahead of the competition.
+              Leverage our comprehensive suite of AI-powered services to revolutionize your business operations and stay
+              ahead of the competition.
             </p>
           </motion.div>
-          
+
           <motion.div
             ref={ref}
             variants={containerVariants}
@@ -175,7 +167,7 @@ function Home() {
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 className={`bg-[#0a222e] p-8 rounded-xl border border-[#c4d0af]/20 h-full flex flex-col ${
-                  index === 0 || index === services.length - 1 ? 'md:col-span-2 lg:col-span-1' : ''
+                  index === 0 || index === services.length - 1 ? "md:col-span-2 lg:col-span-1" : ""
                 }`}
               >
                 <div className="flex justify-center mb-6">
@@ -201,78 +193,24 @@ function Home() {
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Begin Your AI Transformation</h2>
               <p className="text-xl text-[#f8e4d3]/80">
-                Ready to revolutionize your business with AI? Connect with our experts 
-                for a personalized consultation and discover the perfect solution for your needs.
+                Ready to revolutionize your business with AI? Connect with our experts for a personalized consultation
+                and discover the perfect solution for your needs.
               </p>
             </motion.div>
-            
             <motion.form
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="bg-[#0a222e] p-8 rounded-xl border border-[#c4d0af]/20"
             >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-[#f8e4d3] mb-2">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-2 rounded-lg bg-[#0a222e] text-[#f8e4d3] border border-[#c4d0af]/20 focus:border-[#5ca869] focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-[#f8e4d3] mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-2 rounded-lg bg-[#0a222e] text-[#f8e4d3] border border-[#c4d0af]/20 focus:border-[#5ca869] focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-[#f8e4d3] mb-2">Company</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    required
-                    className="w-full px-4 py-2 rounded-lg bg-[#0a222e] text-[#f8e4d3] border border-[#c4d0af]/20 focus:border-[#5ca869] focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-[#f8e4d3] mb-2">Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-2 rounded-lg bg-[#0a222e] text-[#f8e4d3] border border-[#c4d0af]/20 focus:border-[#5ca869] focus:outline-none"
-                  />
-                </div>
-              </div>
-              <div className="mt-6">
-                <label htmlFor="message" className="block text-[#f8e4d3] mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-lg bg-[#0a222e] text-[#f8e4d3] border border-[#c4d0af]/20 focus:border-[#5ca869] focus:outline-none"
-                ></textarea>
-              </div>
-              <motion.div
-                className="mt-8 text-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+
+              <motion.div className="mt-8 text-center" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-[#5ca869] hover:bg-[#90bc8c] text-[#0a222e] font-bold py-4 px-8 rounded-lg text-lg transition-colors inline-flex items-center gap-2"
                 >
-                  Start Your Journey
+                  Schedule a Consultation
                   <ChevronRight size={20} />
                 </button>
               </motion.div>
@@ -280,8 +218,11 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* Consultation Modal */}
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
+
